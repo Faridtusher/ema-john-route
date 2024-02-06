@@ -26,10 +26,32 @@ const Shop = () => {
       addToDb(product.id)
    }
 
-   useEffect(() =>{
-      const storedCart = getShoppingCart();
-      console.log(storedCart)
-   },[])
+   useEffect( () =>{
+      const storedCard = getShoppingCart();
+      let savedCart = [];
+
+      // step-1 get the id from local storage
+      for(const id in storedCard){
+
+         // step 2 (find the product data based on id)
+         const addedProduct = products.find(product => product.id === id); 
+
+         // step - 3 set the quantity
+         if(addedProduct){
+            const quantity = storedCard[id];
+            addedProduct.quantity = quantity
+
+            // step-4 (add the added product to the save cart)
+            savedCart.push(addedProduct)
+            console.log(addedProduct)
+
+         }
+      }
+
+      // step-5 (set the cart)
+      setCart(savedCart);
+   },[products])
+
 
 
    return (
