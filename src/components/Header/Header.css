@@ -1,0 +1,23 @@
+.nav-container{
+  background-color: #1C2B35;
+  height: 80px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px; 
+}
+
+.nav-logo img{
+   width: 120px;
+}
+
+.nav-menu a{
+   text-decoration: none;
+   margin-left: 40px;
+   color: #FFFFFF;
+}
+
+.nav-menu a:hover{
+   color: orange;
+}

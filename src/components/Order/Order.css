@@ -1,0 +1,36 @@
+.order-container{
+   background-color:burlywood;
+   padding: 15px;
+   position: sticky;
+   top: 0;
+   text-align: center;
+   font-size: large;
+}
+
+.AddButton{
+   width: 100%;
+   margin-bottom: 10px;
+   background-color: #FF3030;
+   border: none;
+   border-radius: 5px;
+   padding: 10px;
+   color: white;
+   font-weight: 700;
+   font-size: large;
+}
+
+.delateButton{
+  width: 100%;
+   margin-bottom: 10px;
+   background-color: #FF9900;
+   border: none;
+   border-radius: 5px;
+   padding: 10px;
+   color: white;
+   font-weight: 700;
+   font-size: large;
+}
+
+.icon{
+   margin-left: 10px;
+}
