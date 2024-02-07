@@ -21,7 +21,19 @@ const Shop = () => {
 
    const handelAddToCart = (product) =>{
       // console.log(product)
-      const newCart = [...cart, product];
+      let newCart = [];
+
+      let exists = cart.find(pd => pd.id === product.id)
+      if(!exists){
+         product.quantity = 1 ;
+         newCart = [...cart, product]
+      }
+      else{
+         exists.quantity = exists.quantity + 1
+         const remaining = cart.filter(pd => pd.id !== product.id);
+         newCart = [...remaining , exists]
+      }
+      // const newCart = [...cart, product];
       setCart(newCart);
       addToDb(product.id)
    }
@@ -39,12 +51,11 @@ const Shop = () => {
          // step - 3 set the quantity
          if(addedProduct){
             const quantity = storedCard[id];
-            addedProduct.quantity = quantity
+            addedProduct.quantity = quantity;
 
             // step-4 (add the added product to the save cart)
             savedCart.push(addedProduct)
             console.log(addedProduct)
-
          }
       }
 

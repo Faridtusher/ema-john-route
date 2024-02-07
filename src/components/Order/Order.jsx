@@ -12,10 +12,13 @@ const Order = (props) => {
    let total = 0;
    let TotalShipping = 0;
    let TotalTax = 0;
+   let quantity = 0;
    for(const product of cart){
-      total = total + product.price;
+      // product.quantity = product.quantity || 1;
+      total = total + product.price * product.quantity;
       TotalShipping = TotalShipping + product.shipping;
       TotalTax = TotalTax + (product.price*5 /100);
+      quantity = quantity + product.quantity;
    }
    let grandTotal = total+TotalShipping+TotalTax;
 
@@ -24,7 +27,7 @@ const Order = (props) => {
       // eslint-disable-next-line react/jsx-no-comment-textnodes
       <div className='order-container'>
          <h3>Order summary</h3>
-         <p>Selected items : {props.cart.length}</p>
+         <p>Selected items : {quantity}</p>
          <p>Total Price : $ {total.toFixed(2)}</p>
          <p>Total Shipping Charge : $ {TotalShipping.toFixed(2)}</p>
          <p>Tax: $ {TotalTax.toFixed(2)}</p>
