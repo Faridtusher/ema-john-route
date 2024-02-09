@@ -2,23 +2,28 @@
 import React from 'react';
 import Order from '../Order/Order';
 import { useLoaderData } from 'react-router-dom';
+import SingleProduct from '../SingleProduct/SingleProduct';
+import './Orders.css'
 
 
 const Orders = () => {
    const loadProducts = useLoaderData();
    // console.log(loadProducts)
    return (
-      <div>
-         <div className='shop-container'>
-            <div>
-               <h3>Order page :{loadProducts.length}</h3>
-            </div>
-            
+      <div className='ord-container'>
+         <div className='product-container'>
+            {
+               loadProducts.map(product => <SingleProduct
+               key={product.key}
+               product={product}
+               ></SingleProduct>)
+            }
+         </div>            
 
-            <div className='cart-container'>
-              <Order cart={loadProducts}></Order>
-            </div>   
+         <div>
+            <Order cart={loadProducts}></Order>
          </div>   
+           
       </div>
    );
 };

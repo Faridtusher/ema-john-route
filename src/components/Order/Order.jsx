@@ -17,10 +17,12 @@ const Order = (props) => {
       // product.quantity = product.quantity || 1;
       total = total + product.price * product.quantity;
       TotalShipping = TotalShipping + product.shipping;
-      TotalTax = TotalTax + (product.price*5 /100);
+      TotalTax = TotalTax + (product.price*2 /100);
       quantity = quantity + product.quantity;
    }
    let grandTotal = total+TotalShipping+TotalTax;
+
+   // const myClear = deleteShoppingCart();
 
    // eslint-disable-next-line react/prop-types
    return (
@@ -32,7 +34,7 @@ const Order = (props) => {
          <p>Total Shipping Charge : $ {TotalShipping.toFixed(2)}</p>
          <p>Tax: $ {TotalTax.toFixed(2)}</p>
          <h4>Grand Total : $ {grandTotal.toFixed(2)}</h4>
-         <button className='AddButton'> Clear Cart <FontAwesomeIcon className ='icon' icon={faTrash} /></button>
+         <button  className='AddButton'> Clear Cart <FontAwesomeIcon className ='icon' icon={faTrash} /></button>
          <button className='delateButton'>Review Order  <FontAwesomeIcon className='icon' icon={faArrowRight} /></button>  
       </div>
    );

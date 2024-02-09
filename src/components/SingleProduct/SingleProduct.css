@@ -1,0 +1,40 @@
+
+.single-cart-container {
+   border: 1px solid rgb(223, 209, 209);
+   margin-bottom: 5px;
+   border-radius: 5px;
+   height: 150px;
+   width: 600px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+    
+}
+
+.cartProductDetails{
+   display: flex;
+   align-items: center;  
+}
+
+.cartProductDetails img{
+   width: 150px;
+   height: 150px;
+   border-radius: 5px;
+}
+
+.cart-product-titles{
+   margin-left: 20px;
+}
+
+span{
+   color: rgb(236, 165, 79);
+}
+
+.delete-icon{
+  color: rgb(189, 60, 60);
+  font-size: larger;
+  margin-right: 20px;
+  background-color: yellow;
+  
+}
+
