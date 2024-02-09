@@ -3,9 +3,10 @@ import React from 'react';
 import Order from '../Order/Order';
 import { useLoaderData } from 'react-router-dom';
 
+
 const Orders = () => {
    const loadProducts = useLoaderData();
-   console.log(loadProducts)
+   // console.log(loadProducts)
    return (
       <div>
          <div className='shop-container'>
@@ -15,7 +16,7 @@ const Orders = () => {
             
 
             <div className='cart-container'>
-              <Order cart={[]}></Order>
+              <Order cart={loadProducts}></Order>
             </div>   
          </div>   
       </div>
