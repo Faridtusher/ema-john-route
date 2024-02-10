@@ -1,27 +1,29 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import Order from '../Order/Order';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import SingleProduct from '../SingleProduct/SingleProduct';
 import './Orders.css'
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const Orders = () => {
    const loadProducts = useLoaderData();
-
    const [cart, setCart] = useState(loadProducts);
+   const deleteFromCart = () =>{
+      setCart([])
+      deleteShoppingCart()
+   }
 
    const handelRemoveFromCart = (id) =>{
-      console.log(id)
+      // console.log(id)
       const remainingItems = cart.filter(product => product.id !== id)
       setCart(remainingItems)
       removeFromDb(id)
-      // const myCart = cart.foreach(cd => cd.id === id);
-      // setCart(myCart)
    }
 
-   // console.log(cart)
    return (
       <div className='ord-container'>
          <div className='product-container'>
@@ -35,7 +37,12 @@ const Orders = () => {
          </div>            
 
          <div>
-            <Order cart={cart}></Order>
+            <Order 
+            cart={cart}
+            deleteFromCart ={deleteFromCart}
+            >
+               <Link to=''><button  className='orderButton'>  Checkout  <FontAwesomeIcon  className='icon' icon={faArrowRight} /></button></Link>
+            </Order>
          </div>     
       </div>
    );

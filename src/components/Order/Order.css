@@ -8,7 +8,7 @@
    border-radius: 5px;
 }
 
-.AddButton{
+.delateButton{
    width: 100%;
    margin-bottom: 10px;
    background-color: #FF3030;
@@ -20,7 +20,11 @@
    font-size: large;
 }
 
-.delateButton{
+.delateButton:hover{
+   background-color: #9e0c0c;  
+}
+
+.orderButton{
   width: 100%;
    margin-bottom: 10px;
    background-color: #FF9900;
@@ -30,6 +34,13 @@
    color: white;
    font-weight: 700;
    font-size: large;
+}
+
+
+.orderButton:hover{
+
+  background-color: #7c4c06;
+
 }
 
 .icon{

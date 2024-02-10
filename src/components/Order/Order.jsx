@@ -2,11 +2,11 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import './Order.css'
-import { faArrowRight, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Order = ({cart}) => {
-   
+const Order = ({cart, deleteFromCart, children}) => {
+
    console.log(cart)
    // eslint-disable-next-line react/prop-types
   
@@ -22,7 +22,7 @@ const Order = ({cart}) => {
       quantity = quantity + product.quantity;
    }
    let grandTotal = total+TotalShipping+TotalTax;
-   
+
    // eslint-disable-next-line react/prop-types
    return (
       // eslint-disable-next-line react/jsx-no-comment-textnodes
@@ -33,8 +33,11 @@ const Order = ({cart}) => {
          <p>Total Shipping Charge : $ {TotalShipping.toFixed(2)}</p>
          <p>Tax: $ {TotalTax.toFixed(2)}</p>
          <h4>Grand Total : $ {grandTotal.toFixed(2)}</h4>
-         <button className='AddButton'> Clear Cart <FontAwesomeIcon className ='icon' icon={faTrash} /></button>
-         <button  className='delateButton'> Order Now  <FontAwesomeIcon  className='icon' icon={faArrowRight} /></button>  
+         <button onClick={deleteFromCart} className='delateButton'> Clear Cart <FontAwesomeIcon className ='icon' icon={faTrash} /></button>
+          
+         {
+            children
+         }
       </div>
    );
 };
