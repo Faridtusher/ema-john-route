@@ -6,10 +6,8 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Order = ({cart, deleteFromCart, children}) => {
-
-   console.log(cart)
+   // console.log(cart)
    // eslint-disable-next-line react/prop-types
-  
    let total = 0;
    let TotalShipping = 0;
    let TotalTax = 0;

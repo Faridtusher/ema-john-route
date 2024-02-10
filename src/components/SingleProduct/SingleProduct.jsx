@@ -4,7 +4,6 @@ import './SingleProduct.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-
 // eslint-disable-next-line react/prop-types
 const SingleProduct = ({product, handelRemoveFromCart}) => {
    // console.log(product)

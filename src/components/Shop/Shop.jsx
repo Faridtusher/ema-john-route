@@ -41,15 +41,12 @@ const Shop = () => {
 
       // step-1 get the id from local storage
       for(const id in storedCard){
-
          // step 2 (find the product data based on id)
          const addedProduct = products.find(pd => pd.id === id); 
-
          // step - 3 set the quantity
          if(addedProduct){
             const quantity = storedCard[id];
             addedProduct.quantity = quantity;
-
             // step-4 (add the added product to the save cart)
             savedCart.push(addedProduct)
          }
@@ -62,7 +59,6 @@ const Shop = () => {
       setCart([]) ;
       deleteShoppingCart();
    }
-
 
    return (
       <div className='shop-container'>
@@ -82,9 +78,7 @@ const Shop = () => {
                 cart={cart}
                 deleteFromCart={deleteFromCart}
               >
-
                <Link to='/orders'><button  className='orderButton'> Order Now  <FontAwesomeIcon  className='icon' icon={faArrowRight} /></button> </Link>
-               
               </Order>
             </div>   
       </div>
