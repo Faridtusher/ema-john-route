@@ -6,10 +6,10 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 // eslint-disable-next-line react/prop-types
-const SingleProduct = ({product}) => {
-   console.log(product)
+const SingleProduct = ({product, handelRemoveFromCart}) => {
+   // console.log(product)
    // eslint-disable-next-line react/prop-types
-   const {img, name, price, quantity} = product
+   const {img, name, price, quantity, id} = product
    return (
       <div className='single-cart-container'>
 
@@ -21,7 +21,7 @@ const SingleProduct = ({product}) => {
                <p>Quantity: <span>{quantity}</span></p>
             </div>
          </div>
-         <button className='delete-icon'>
+         <button onClick={() => handelRemoveFromCart(id)} className='delete-icon'>
             <FontAwesomeIcon icon={faTrash} />   
          </button>
       </div>

@@ -3,7 +3,7 @@
    margin-bottom: 10px;
    border-radius: 5px;
    height: 110px;
-   width: 600px;
+   width: 650px;
    display: flex;
    justify-content: space-between;
    align-items: center; 
@@ -23,6 +23,7 @@
 
 .cart-product-titles{
    margin-left: 20px;
+   line-height: 10px;
 }
 
 span{
