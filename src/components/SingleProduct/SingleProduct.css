@@ -1,14 +1,13 @@
-
 .single-cart-container {
    border: 1px solid rgb(223, 209, 209);
-   margin-bottom: 5px;
+   margin-bottom: 10px;
    border-radius: 5px;
-   height: 150px;
+   height: 110px;
    width: 600px;
    display: flex;
    justify-content: space-between;
-   align-items: center;
-    
+   align-items: center; 
+   padding: 5px;  
 }
 
 .cartProductDetails{
@@ -17,8 +16,8 @@
 }
 
 .cartProductDetails img{
-   width: 150px;
-   height: 150px;
+   width: 110px;
+   height: 110px;
    border-radius: 5px;
 }
 
@@ -31,10 +30,21 @@ span{
 }
 
 .delete-icon{
-  color: rgb(189, 60, 60);
+  color: rgb(218, 43, 43);
   font-size: larger;
   margin-right: 20px;
-  background-color: yellow;
-  
+  border: 0px;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(237, 126, 126);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.delete-icon :hover{
+  color: red;
 }
 

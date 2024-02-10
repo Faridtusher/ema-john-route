@@ -21,10 +21,9 @@ const SingleProduct = ({product}) => {
                <p>Quantity: <span>{quantity}</span></p>
             </div>
          </div>
-
-         <div>
-            <FontAwesomeIcon className='delete-icon' icon={faTrash} />   
-         </div>
+         <button className='delete-icon'>
+            <FontAwesomeIcon icon={faTrash} />   
+         </button>
       </div>
    );
 };
